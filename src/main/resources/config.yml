@@ -6,4 +6,4 @@ server_motd:
     line_2: "<c><rainbow><b>MiniMessage</rainbow> <#a8baff><b>Support</b></#a8baff></c>"
 
 messages:
-    reload: "<gradient:#3f368e:#ffdd5c><b>MythicMOTD</b></gradient> reloaded!"
+    reload: "Config reloaded!"

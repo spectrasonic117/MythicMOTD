@@ -37,9 +37,6 @@ public final class Main extends JavaPlugin {
         CommandUtils.setPlugin(this);
         MessageUtils.sendStartupMessage(this);
 
-        CommandUtils.setPlugin(this);
-        MessageUtils.sendStartupMessage(this);
-
     }
 
     @Override
