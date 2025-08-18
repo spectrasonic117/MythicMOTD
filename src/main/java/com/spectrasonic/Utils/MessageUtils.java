@@ -14,7 +14,15 @@ public final class MessageUtils {
 
     private static final JavaPlugin plugin = JavaPlugin.getProvidingPlugin(MessageUtils.class);
     public static final String DIVIDER = "<gray>----------------------------------------</gray>";
-    public static final String PREFIX = "<gray>[<gold>"+ plugin.getPluginMeta().getName()+"</gold>]</gray> <gold>»</gold> ";
+    public static final String PREFIX = "<dark_gray>[<red>" + plugin.getPluginMeta().getName() + "</red>]</dark_gray> <green>»</green> ";
+    
+    public static final String CLOSE_PREFIX = "</#9e9893>";
+    public static final String SUCESS_PREFIX = "<green><b>[✔]</b><green> <#9e9893>";
+    public static final String ALERT_PREFIX = "<yellow><b>[!]</b><yellow> <#9e9893>";
+    public static final String DENY_PREFIX = "<red><b>[✖]</b><red> <#9e9893>";
+    public static final String WARNING_PREFIX = "<red><b>[⚠]</b><red> <#9e9893>";
+    public static final String INFO_PREFIX = "<aqua><b>[i]</b><aqua> <#9e9893>";
+    public static final String DEBUG_PREFIX = "<blue><b>[d]</b><blue> <#9e9893>";
 
     private static final MiniMessage miniMessage = MiniMessage.miniMessage();
 
@@ -30,8 +38,48 @@ public final class MessageUtils {
         Bukkit.getConsoleSender().sendMessage(miniMessage.deserialize(PREFIX + message));
     }
 
+    //  --- Utility Messages ---
+
     public static void sendPermissionMessage(CommandSender sender) {
-        sender.sendMessage(miniMessage.deserialize(PREFIX + "<red>You do not have permission to use this command!</red>"));
+        sender.sendMessage(
+                miniMessage.deserialize(PREFIX + "<red>You do not have permission to use this command!</red>"));
+    }
+
+    public static void sendOnlyPlayerCommandMessage(CommandSender sender) {
+        Bukkit.getConsoleSender().sendMessage(
+                miniMessage.deserialize(
+                        PREFIX + "<#ff003c><b>[x]</b> <#9e9893>Only players can use this command<#9e9893>"));
+    }
+    
+    public static void configReloadedMessage(CommandSender sender) {
+        Bukkit.getConsoleSender().sendMessage(
+                miniMessage.deserialize(PREFIX + "<green><b>[✔]</b> <#9e9893>Config Reloaded</#9e9893>"));
+    }
+    
+    //  --- Alert Messages ---
+
+    public static void sucessMessage(CommandSender sender, String message) {
+        sender.sendMessage(miniMessage.deserialize(SUCESS_PREFIX + message + CLOSE_PREFIX));
+    }
+
+    public static void alertMessage(CommandSender sender, String message) {
+        sender.sendMessage(miniMessage.deserialize(ALERT_PREFIX + message + CLOSE_PREFIX));
+    }
+
+    public static void denyMessage(CommandSender sender, String message) {
+        sender.sendMessage(miniMessage.deserialize(DENY_PREFIX + message + CLOSE_PREFIX));
+    }
+
+    public static void warningMessage(CommandSender sender, String message) {
+        sender.sendMessage(miniMessage.deserialize(WARNING_PREFIX + message + CLOSE_PREFIX));
+    }
+
+    public static void infoMessage(CommandSender sender, String message) {
+        sender.sendMessage(miniMessage.deserialize(INFO_PREFIX + message + CLOSE_PREFIX));
+    }
+
+    public static void debugMessage(CommandSender sender, String message) {
+        sender.sendMessage(miniMessage.deserialize(DEBUG_PREFIX + message + CLOSE_PREFIX));
     }
 
     public static void sendStartupMessage(JavaPlugin plugin) {

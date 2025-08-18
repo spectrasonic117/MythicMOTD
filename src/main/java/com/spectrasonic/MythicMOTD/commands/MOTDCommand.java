@@ -40,6 +40,6 @@ public class MOTDCommand {
     private void executeReload(CommandSender sender) {
         plugin.getConfigManager().loadConfig();
         String reloadMessage = plugin.getConfigManager().getMessage("messages.reload");
-        MessageUtils.sendMessage(sender, reloadMessage);
+        MessageUtils.sucessMessage(sender, reloadMessage);
     }
 }
