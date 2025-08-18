@@ -1,7 +1,9 @@
 package com.spectrasonic.MythicMOTD.managers;
 
 import com.spectrasonic.MythicMOTD.Main;
+import com.spectrasonic.MythicMOTD.listeners.MOTDListener;
 import lombok.Getter;
+import org.bukkit.Bukkit;
 
 @Getter
 public class EventManager {
@@ -14,7 +16,7 @@ public class EventManager {
     }
 
     private void registerEvents() {
-        // Register events here
+        Bukkit.getPluginManager().registerEvents(new MOTDListener(plugin), plugin);
     }
 
 }

@@ -27,7 +27,7 @@ public final class Main extends JavaPlugin {
 
     @Override
     public void onEnable() {
-        SaveDefaultConfig();
+        saveDefaultConfig();
         CommandAPI.onEnable();
 
         this.configManager = new ConfigManager(this);

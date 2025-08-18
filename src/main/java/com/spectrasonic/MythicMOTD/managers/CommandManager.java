@@ -1,6 +1,7 @@
 package com.spectrasonic.MythicMOTD.managers;
 
 import com.spectrasonic.MythicMOTD.Main;
+import com.spectrasonic.MythicMOTD.commands.MOTDCommand;
 import lombok.Getter;
 
 @Getter
@@ -14,6 +15,6 @@ public class CommandManager {
     }
 
     private void registerCommands() {
-        // Register commands here
+        new MOTDCommand(plugin);
     }
 }
