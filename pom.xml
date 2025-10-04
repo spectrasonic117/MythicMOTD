@@ -5,17 +5,17 @@
 
         <groupId>com.spectrasonic</groupId>
         <artifactId>MythicMOTD</artifactId>
-        <version>1.0.0</version>
+        <version>1.0.0-Legacy</version>
         <packaging>jar</packaging>
 
         <properties>
             <!-- Java Version -->
-            <maven.compiler.source>21</maven.compiler.source>
-            <maven.compiler.target>21</maven.compiler.target>
+            <maven.compiler.source>17</maven.compiler.source>
+            <maven.compiler.target>17</maven.compiler.target>
             <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 
             <!-- Dependencies version -->
-            <paper.version>1.21.1-R0.1-SNAPSHOT</paper.version>
+            <paper.version>1.20.1-R0.1-SNAPSHOT</paper.version>
             <commandapi.version>10.1.2</commandapi.version>
             <lombok.version>1.18.38</lombok.version>
             <adventure.version>4.24.0</adventure.version>
