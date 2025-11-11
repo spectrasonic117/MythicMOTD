@@ -1,4 +1,4 @@
-package com.spectrasonic.Utils;
+package com.spectrasonic.MythicMOTD.utils;
 
 import net.kyori.adventure.text.Component;
 import net.kyori.adventure.text.minimessage.MiniMessage;
@@ -14,8 +14,9 @@ public final class MessageUtils {
 
     private static final JavaPlugin plugin = JavaPlugin.getProvidingPlugin(MessageUtils.class);
     public static final String DIVIDER = "<gray>----------------------------------------</gray>";
-    public static final String PREFIX = "<dark_gray>[<red>" + plugin.getPluginMeta().getName() + "</red>]</dark_gray> <green>»</green> ";
-    
+    public static final String PREFIX = "<dark_gray>[<red>" + plugin.getPluginMeta().getName()
+            + "</red>]</dark_gray> <green>»</green> ";
+
     public static final String CLOSE_PREFIX = "</#9e9893>";
     public static final String SUCESS_PREFIX = "<green><b>[✔]</b><green> <#9e9893>";
     public static final String ALERT_PREFIX = "<yellow><b>[!]</b><yellow> <#9e9893>";
@@ -38,7 +39,7 @@ public final class MessageUtils {
         Bukkit.getConsoleSender().sendMessage(miniMessage.deserialize(PREFIX + message));
     }
 
-    //  --- Utility Messages ---
+    // --- Utility Messages ---
 
     public static void sendPermissionMessage(CommandSender sender) {
         sender.sendMessage(
@@ -50,13 +51,13 @@ public final class MessageUtils {
                 miniMessage.deserialize(
                         PREFIX + "<#ff003c><b>[x]</b> <#9e9893>Only players can use this command<#9e9893>"));
     }
-    
+
     public static void configReloadedMessage(CommandSender sender) {
         Bukkit.getConsoleSender().sendMessage(
                 miniMessage.deserialize(PREFIX + "<green><b>[✔]</b> <#9e9893>Config Reloaded</#9e9893>"));
     }
-    
-    //  --- Alert Messages ---
+
+    // --- Alert Messages ---
 
     public static void sucessMessage(CommandSender sender, String message) {
         sender.sendMessage(miniMessage.deserialize(PREFIX + SUCESS_PREFIX + message + CLOSE_PREFIX));
@@ -120,9 +121,7 @@ public final class MessageUtils {
     }
 
     public static void sendBroadcastMessage(String message) {
-        Bukkit.getOnlinePlayers().forEach(player -> 
-            player.sendMessage(miniMessage.deserialize(message))
-        );
+        Bukkit.getOnlinePlayers().forEach(player -> player.sendMessage(miniMessage.deserialize(message)));
     }
 
     public static void sendShutdownMessage(JavaPlugin plugin) {
@@ -141,10 +140,9 @@ public final class MessageUtils {
         final Component titleComponent = miniMessage.deserialize(title);
         final Component subtitleComponent = miniMessage.deserialize(subtitle);
         player.showTitle(Title.title(titleComponent, subtitleComponent, Times.times(
-            Duration.ofSeconds(fadeIn),
-            Duration.ofSeconds(stay),
-            Duration.ofSeconds(fadeOut)
-        )));
+                Duration.ofSeconds(fadeIn),
+                Duration.ofSeconds(stay),
+                Duration.ofSeconds(fadeOut))));
     }
 
     public static void sendActionBar(Player player, String message) {
@@ -155,20 +153,19 @@ public final class MessageUtils {
         final Component titleComponent = miniMessage.deserialize(title);
         final Component subtitleComponent = miniMessage.deserialize(subtitle);
         final Title formattedTitle = Title.title(titleComponent, subtitleComponent, Times.times(
-            Duration.ofSeconds(fadeIn),
-            Duration.ofSeconds(stay),
-            Duration.ofSeconds(fadeOut)
-        ));
+                Duration.ofSeconds(fadeIn),
+                Duration.ofSeconds(stay),
+                Duration.ofSeconds(fadeOut)));
 
         Bukkit.getOnlinePlayers().forEach(player -> player.showTitle(formattedTitle));
     }
 
-        // Uso - Send Title to players
-        // MiniMessageUtils.sendTitle(player, 
-        //     "<gold>¡Alerta!</gold>", 
-        //     "<red>Mensaje importante</red>", 
-        //     2, 40, 2
-        // );
+    // Uso - Send Title to players
+    // MiniMessageUtils.sendTitle(player,
+    // "<gold>¡Alerta!</gold>",
+    // "<red>Mensaje importante</red>",
+    // 2, 40, 2
+    // );
 
     public static void broadcastActionBar(String message) {
         final Component component = miniMessage.deserialize(message);
@@ -176,6 +173,7 @@ public final class MessageUtils {
     }
 
     // Uso Broadcast ActionBAR
-    // MiniMessageUtils.broadcastActionBar("<yellow>¡Evento e…special activado!</yellow>");
+    // MiniMessageUtils.broadcastActionBar("<yellow>¡Evento e…special
+    // activado!</yellow>");
 
 }

@@ -1,9 +1,10 @@
 name: MythicMOTD
-version: '${version}'
+api: "1.21"
+version: "${version}"
 main: com.spectrasonic.MythicMOTD.Main
-api-version: '1.21'
+api-version: "1.21"
 authors: [Spectrasonic]
 
 permissions:
-  mythicmotd.admin:
-    default: op
+    mythicmotd.admin:
+        default: op
