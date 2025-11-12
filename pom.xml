@@ -5,7 +5,7 @@
 
         <groupId>com.spectrasonic</groupId>
         <artifactId>MythicMOTD</artifactId>
-        <version>1.1.0</version>
+        <version>1.1.0-SNAPSHOT</version>
         <packaging>jar</packaging>
 
         <properties>
@@ -16,9 +16,8 @@
 
             <!-- Dependencies version -->
             <paper.version>1.21.1-R0.1-SNAPSHOT</paper.version>
-            <commandapi.version>10.1.2</commandapi.version>
             <lombok.version>1.18.38</lombok.version>
-            <adventure.version>4.24.0</adventure.version>
+            <adventure.version>4.15.0</adventure.version>
 
             <!-- Plguins Version -->
             <compiler.version>3.14.0</compiler.version>
@@ -50,20 +49,6 @@
                 <scope>provided</scope>
             </dependency>
 
-            <!-- CommandAPI -->
-            <dependency>
-                <groupId>dev.jorel</groupId>
-                <artifactId>commandapi-bukkit-core</artifactId>
-                <version>${commandapi.version}</version>
-                <scope>provided</scope>
-            </dependency>
-
-            <dependency>
-                <groupId>dev.jorel</groupId>
-                <artifactId>commandapi-bukkit-shade</artifactId>
-                <version>${commandapi.version}</version>
-            </dependency>
-
             <!-- Lombok -->
             <dependency>
                 <groupId>org.projectlombok</groupId>
@@ -82,6 +67,12 @@
                 <groupId>net.kyori</groupId>
                 <artifactId>adventure-api</artifactId>
                 <version>${adventure.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>net.kyori</groupId>
+                <artifactId>adventure-platform-bukkit</artifactId>
+                <version>4.4.1</version>
             </dependency>
         </dependencies>
 
@@ -123,12 +114,6 @@
                         <dependencyReducedPomLocation>${project.build.directory}/dependency-reduced-pom.xml</dependencyReducedPomLocation>
                         <shadedArtifactAttached>true</shadedArtifactAttached>
                         <minimizeJar>true</minimizeJar>
-                        <relocations>
-                            <relocation>
-                                <pattern>dev.jorel.commandapi</pattern>
-                                <shadedPattern>com.spectrasonic.commandapi</shadedPattern>
-                            </relocation>
-                        </relocations>
                     </configuration>
                     <executions>
                         <execution>

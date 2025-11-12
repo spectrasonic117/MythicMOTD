@@ -5,6 +5,14 @@ main: com.spectrasonic.MythicMOTD.Main
 api-version: "1.21"
 authors: [Spectrasonic]
 
+commands:
+    mythicmotd:
+        permission: "mythicmotd.admin"
+        aliases:
+            - "mmotd"
+            - "motd"
+        permission-default: op
+
 permissions:
     mythicmotd.admin:
         default: op
