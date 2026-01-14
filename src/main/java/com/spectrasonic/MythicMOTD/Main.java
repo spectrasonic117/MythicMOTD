@@ -6,7 +6,7 @@ import com.spectrasonic.MythicMOTD.managers.EventManager;
 import com.spectrasonic.MythicMOTD.utils.MessageUtils;
 
 import dev.jorel.commandapi.CommandAPI;
-import dev.jorel.commandapi.CommandAPIBukkitConfig;
+import dev.jorel.commandapi.CommandAPIPaperConfig;
 import lombok.Getter;
 
 import org.bukkit.plugin.java.JavaPlugin;
@@ -20,7 +20,7 @@ public final class Main extends JavaPlugin {
 
     @Override
     public void onLoad() {
-        CommandAPI.onLoad(new CommandAPIBukkitConfig(this));
+        CommandAPI.onLoad(new CommandAPIPaperConfig(this));
     }
 
     @Override

@@ -5,7 +5,7 @@
 
         <groupId>com.spectrasonic</groupId>
         <artifactId>MythicMOTD</artifactId>
-        <version>1.1.0</version>
+        <version>1.1.1</version>
         <packaging>jar</packaging>
 
         <properties>
@@ -15,8 +15,8 @@
             <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 
             <!-- Dependencies version -->
-            <paper.version>1.21.1-R0.1-SNAPSHOT</paper.version>
-            <commandapi.version>10.1.2</commandapi.version>
+            <paper.version>1.21.8-R0.1-SNAPSHOT</paper.version>
+            <commandapi.version>11.1.0</commandapi.version>
             <lombok.version>1.18.38</lombok.version>
             <adventure.version>4.24.0</adventure.version>
 
@@ -53,14 +53,14 @@
             <!-- CommandAPI -->
             <dependency>
                 <groupId>dev.jorel</groupId>
-                <artifactId>commandapi-bukkit-core</artifactId>
+                <artifactId>commandapi-paper-core</artifactId>
                 <version>${commandapi.version}</version>
                 <scope>provided</scope>
             </dependency>
 
             <dependency>
                 <groupId>dev.jorel</groupId>
-                <artifactId>commandapi-bukkit-shade</artifactId>
+                <artifactId>commandapi-paper-shade</artifactId>
                 <version>${commandapi.version}</version>
             </dependency>
 
@@ -119,7 +119,7 @@
                     <version>${shade.version}</version>
                     <configuration>
                         <outputDirectory>${project.basedir}/out</outputDirectory>
-                        <finalName>${project.artifactId}-${project.version}</finalName>
+                        <finalName>${project.artifactId}-${project.version}-Paper</finalName>
                         <dependencyReducedPomLocation>${project.build.directory}/dependency-reduced-pom.xml</dependencyReducedPomLocation>
                         <shadedArtifactAttached>true</shadedArtifactAttached>
                         <minimizeJar>true</minimizeJar>
