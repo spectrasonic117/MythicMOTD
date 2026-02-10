@@ -5,6 +5,7 @@ import com.spectrasonic.MythicMOTD.utils.MessageUtils;
 
 import dev.jorel.commandapi.CommandAPICommand;
 import org.bukkit.command.CommandSender;
+import dev.jorel.commandapi.CommandPermission;
 
 public class MOTDCommand {
 
@@ -18,9 +19,8 @@ public class MOTDCommand {
     private void registerCommand() {
         new CommandAPICommand("mythicmotd")
                 .withAliases("mmotd", "motd")
-                .withPermission("mythicmotd.admin")
                 .withSubcommand(new CommandAPICommand("reload")
-                        .withPermission("mythicmotd.reload")
+                        .withPermission(CommandPermission.OP)
                         .executes((sender, args) -> {
                             executeReload(sender);
                         }))

@@ -5,8 +5,6 @@ import com.spectrasonic.MythicMOTD.managers.ConfigManager;
 import com.spectrasonic.MythicMOTD.managers.EventManager;
 import com.spectrasonic.MythicMOTD.utils.MessageUtils;
 
-import dev.jorel.commandapi.CommandAPI;
-import dev.jorel.commandapi.CommandAPIPaperConfig;
 import lombok.Getter;
 
 import org.bukkit.plugin.java.JavaPlugin;
@@ -19,14 +17,8 @@ public final class Main extends JavaPlugin {
     private EventManager eventManager;
 
     @Override
-    public void onLoad() {
-        CommandAPI.onLoad(new CommandAPIPaperConfig(this));
-    }
-
-    @Override
     public void onEnable() {
         saveDefaultConfig();
-        CommandAPI.onEnable();
 
         this.configManager = new ConfigManager(this);
         this.commandManager = new CommandManager(this);
@@ -38,7 +30,6 @@ public final class Main extends JavaPlugin {
 
     @Override
     public void onDisable() {
-        CommandAPI.onDisable();
         MessageUtils.sendShutdownMessage(this);
     }
 
